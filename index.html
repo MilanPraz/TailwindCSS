@@ -7,17 +7,27 @@
     <title>Document</title>
     <link rel="stylesheet" href="./dist/style.css">
 </head>
-<body class="bg-[#f2f4f7]  h-screen " >
+<body class="bg-[#f2f4f7]  h-screen box-border " >
 
-    <div class="mx-auto flex flex-col mt-60">
+    <div class="mx-auto flex flex-col mt-60 ">
             <h2 class=" text-[#8f9398] mx-0 text-center text-3xl">Facebook Login Using Tailwind-CSS</h2>
 
 
             <div class="bg-[#ffffff] shadow-lg rounded-md max-h-80  w-64 mx-auto mt-10 p-4 flex flex-col">
         
-                <div class="flex flex-col">
+                <div class=" flex flex-col">
                 <input class="p-2 border-solid border-gray-400 border-2 text-[#8f9398] font-semibold rounded-md" type="text" placeholder="Email or Phone Number">
-                <input class="p-2 border-solid border-gray-400 border-2 text-[#8f9398] font-semibold mt-3 rounded-md" type="password" placeholder="Password">
+                
+                
+                <div class="relative">
+                <input id="pwinput" class="p-2  pr-4 box-border border-solid border-gray-400 border-2 text-[#8f9398] font-semibold mt-3 rounded-md" type="password" placeholder="Password">
+         
+                    <div class=" absolute  top-6 right-3"  >
+                 <img  class="w-5 h-5 cursor-pointer" src="eyeoff.png" alt="eye" id="eyeoff">
+                    </div>
+                    
+                </div>
+           
             </div>
             <div class="flex justify-center cursor-pointer bg-[#0178fd] pt-2 pb-2 text-white font-medium mt-2 rounded-md">
                 Log In
@@ -36,5 +46,30 @@
 
         </div>
     
+
+        <script>
+            // let openeye=document.getElementById("eyeon")
+            let closeeye=document.getElementById("eyeoff")
+            let pwinput=document.getElementById("pwinput")
+
+
+
+            closeeye.addEventListener("click",()=>{
+            if(pwinput.type=="password"){
+                pwinput.type="text";
+                closeeye.src="eyeon.png"
+              
+            }else{
+                pwinput.type="password"
+              
+                closeeye.src="eyeoff.png"
+            }
+
+            })
+           
+            
+
+
+        </script>
     </body>
 </html>
